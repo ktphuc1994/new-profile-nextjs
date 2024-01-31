@@ -1,0 +1,86 @@
+.parallax-wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+
+  header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+
+    [class~='background'] {
+      transform: translateZ(-10px) scale(2.04);
+    }
+
+    [class~='foreground'] {
+      object-position: bottom;
+      transform: translateZ(-5px) scale(1.54);
+    }
+
+    [class~='background'],
+    [class~='foreground'] {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    [class~='title'] {
+      font-size: 4rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 0 5px black;
+    }
+  }
+  section {
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: black;
+    color: white;
+
+    &[class~='scroll-reveal'] {
+      span {
+        display: inline;
+        color: rgba(255, 255, 255, 0.2);
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        background-clip: text;
+        background-image: linear-gradient(white, white);
+        animation: scroll-reveal linear forwards;
+        animation-timeline: view();
+      }
+
+      h2 {
+        text-align: center;
+        span {
+          animation-range-start: cover 20%;
+          animation-range-end: cover 30%;
+        }
+      }
+
+      p {
+        text-align: center;
+        span {
+          animation-range-start: cover 21vh;
+          animation-range-end: cover 50%;
+
+          @media only screen and (max-width: 767px) {
+            animation-range-end: cover 77%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
