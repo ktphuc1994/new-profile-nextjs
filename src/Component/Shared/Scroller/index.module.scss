@@ -18,7 +18,7 @@
     }
   }
 
-  &[data-animated='true'] {
+  @media (prefers-reduced-motion: no-preference) {
     overflow: hidden;
     -webkit-mask: linear-gradient(
       90deg,

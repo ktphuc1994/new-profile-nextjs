@@ -2,6 +2,7 @@
   margin: 0 auto;
   background: black;
   color: white;
+  overflow-x: clip;
 
   [class~='scroll-watcher'] {
     height: 10px;
@@ -17,19 +18,43 @@
   }
 
   [class~='parallax-wrapper'] {
+    position: relative;
     margin-bottom: 30px;
     text-align: center;
+
     img {
       width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      @media (prefers-reduced-motion: no-preference) {
+        animation: zoom-out linear;
+        animation-timeline: view();
+        animation-range-start: exit;
+      }
     }
-    h1 {
-      font-size: 2rem;
-      margin: 0;
+    [class~='title-wrapper'] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        z-index: 2;
+      }
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+      }
     }
-    p {
-      font-size: 1.2rem;
-      margin: 0;
-    }
+  }
+
+  [class~='text-part'] {
+    position: relative;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 50px 100px 0;
+    z-index: 2;
   }
 
   [class~='picture-wrapper'] {
@@ -67,5 +92,13 @@
   to {
     scale: 1;
     opacity: 1;
+  }
+}
+
+@keyframes zoom-out {
+  70%,
+  100% {
+    scale: 3;
+    opacity: 0;
   }
 }

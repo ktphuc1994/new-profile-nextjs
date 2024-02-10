@@ -27,27 +27,29 @@ const Scroller = ({ direction = 'left' }: ScrollerComponent) => {
 
   useEffect(() => {
     setIsReducedMotion(
-      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
     );
   }, []);
 
   return (
-    <div
-      className={styles.scroller}
-      data-animated={isReducedMotion}
-      data-direction={direction}
-    >
+    <div className={styles.scroller} data-direction={direction}>
       <div className='scroller__inner'>
         {skillArray.map((item, index) => (
           <div className='item-wrapper' key={item + index}>
             <span>{item}</span>
           </div>
         ))}
-        {skillArray.map((item, index) => (
-          <div className='item-wrapper' aria-hidden={true} key={item + index}>
-            <span>{item}</span>
-          </div>
-        ))}
+        {isReducedMotion
+          ? null
+          : skillArray.map((item, index) => (
+              <div
+                className='item-wrapper'
+                aria-hidden={true}
+                key={item + index}
+              >
+                <span>{item}</span>
+              </div>
+            ))}
       </div>
     </div>
   );
