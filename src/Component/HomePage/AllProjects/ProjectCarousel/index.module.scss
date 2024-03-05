@@ -1,0 +1,83 @@
+.project-carousel {
+  --_s: 150px; /* Size of the circle */
+  --_p: 25px; /* Size of padding */
+
+  margin-bottom: 30px;
+
+  [class~='swiper-slide'] {
+    width: auto;
+    padding: 0 var(--_p);
+
+    [class~='carousel-item'] {
+      display: block;
+      position: relative;
+      width: var(--_s);
+      height: var(--_s);
+      border-radius: 50%;
+      cursor: pointer;
+
+      text-decoration: none;
+      color: #000;
+
+      img {
+        width: 100%;
+      }
+
+      // Use shape-outside to fill text into circle frame
+      // [class~='project-name'] {
+      //   width: 100%;
+      //   height: 100%;
+      //   border-radius: 50%;
+      //   text-align: center;
+
+      //   &::before,
+      //   i {
+      //     content: '';
+      //     float: left;
+      //     height: 100%;
+      //     width: 50%;
+      //     shape-outside: radial-gradient(
+      //       farthest-side at right,
+      //       transparent calc(100% - var(--_p)),
+      //       #fff 0
+      //     );
+      //   }
+
+      //   i {
+      //     float: right;
+      //     shape-outside: radial-gradient(
+      //       farthest-side at left,
+      //       transparent calc(100% - var(--_p)),
+      //       #fff 0
+      //     );
+      //   }
+      // }
+
+      [class~='project-name'] {
+        position: relative;
+        padding: var(--_p);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        [class~='project-name__title'] {
+          text-align: center;
+          word-break: break-word;
+          font-weight: 500;
+          font-size: 1.2rem;
+
+          &[data-is-md-screen='false'] {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  &[data-is-md-screen='false'] {
+    --_s: 120px;
+    --_p: 16px;
+  }
+}

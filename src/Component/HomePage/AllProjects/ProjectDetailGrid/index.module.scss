@@ -1,0 +1,154 @@
+.project-detail {
+  --_date-circle-size: 90px;
+
+  display: flex;
+
+  [class~='project-detail__info'] {
+    position: relative;
+    width: 50%;
+
+    &::after {
+      content: '';
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(50%);
+      background: repeating-linear-gradient(
+        var(--_item-color),
+        var(--_item-color) 15px,
+        #fff 15px,
+        #fff 20px
+      );
+    }
+
+    [class~='project-name-date'] {
+      position: relative;
+
+      [class~='project-date'] {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        width: var(--_date-circle-size);
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        z-index: 1;
+
+        [class~='project-date__date'] {
+          display: inline-flex;
+          width: var(--_date-circle-size);
+          height: var(--_date-circle-size);
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          border: 4px solid var(--_item-color);
+          background-color: #fff;
+          color: var(--_item-color);
+        }
+      }
+
+      [class~='project-name'] {
+        position: relative;
+        padding: 0.25em 1em;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        background-color: var(--_item-color);
+        z-index: 1;
+
+        span {
+          display: inline-block;
+          max-width: calc(100% - var(--_date-circle-size) / 2);
+        }
+      }
+    }
+
+    [class~='project-libra'] {
+      padding-right: calc(var(--_date-circle-size) / 2);
+      margin: 0.5em 0;
+
+      [class~='MuiChip-root'] {
+        margin: 0.15em 0.25em;
+        border: 2px solid var(--_item-color);
+      }
+    }
+
+    [class~='project-desc'] {
+      padding-right: calc(var(--_date-circle-size) / 2);
+      margin-bottom: 1.5em;
+    }
+  }
+
+  &[data-is-left='false'] {
+    flex-direction: row-reverse;
+
+    [class~='project-detail__info'] {
+      text-align: right;
+
+      &::after {
+        right: auto;
+        left: 0;
+        transform: translateX(-50%);
+      }
+
+      [class~='project-name-date'] {
+        [class~='project-date'] {
+          right: auto;
+          left: 0;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      [class~='project-desc'],
+      [class~='project-libra'] {
+        padding-right: 0;
+        padding-left: calc(var(--_date-circle-size) / 2);
+      }
+    }
+  }
+
+  &[data-is-small-screen='true'] {
+    --_date-circle-size: 80px;
+
+    [class~='project-detail__info'] {
+      width: 100%;
+      text-align: right;
+
+      &::after {
+        right: auto;
+        left: calc(var(--_date-circle-size) / 2);
+        transform: translateX(-50%);
+      }
+
+      [class~='project-name-date'] {
+        display: flex;
+        justify-content: flex-end;
+
+        [class~='project-date'] {
+          right: auto;
+          left: 0;
+          transform: translate(0, -50%);
+          font-size: 1.1rem;
+        }
+
+        [class~='project-name'] {
+          font-size: 1.1rem;
+          width: calc(100% - var(--_date-circle-size) / 2);
+
+          span {
+            max-width: calc(100% - var(--_date-circle-size) * 0.5);
+          }
+        }
+      }
+
+      [class~='project-desc'],
+      [class~='project-libra'] {
+        padding-right: 0;
+        padding-left: calc(var(--_date-circle-size));
+      }
+    }
+  }
+}
