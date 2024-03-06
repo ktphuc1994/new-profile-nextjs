@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useRef, useState } from 'react';
 
 // import local styles
 import styles from './index.module.scss';
@@ -9,6 +10,7 @@ import { ProjectItem } from '@/types';
 // import MUI components
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,20 +29,43 @@ const ProjectCarousel = ({ projectList }: ProjectCarouselComponent) => {
   const isLgScreen = useMediaQuery(theme.breakpoints.up('lg'));
   const isMdScreen = useMediaQuery(theme.breakpoints.up('md'));
 
+  const [isShownButton, setIsShownButton] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollToCarousel = () => {
+    if (!carouselRef.current) return;
+    carouselRef.current.scrollIntoView();
+  };
+
+  useEffect(() => {
+    const _checkToShowButton = () => {
+      if (!carouselRef.current) return;
+      const isShown =
+        carouselRef.current.getBoundingClientRect().top +
+          carouselRef.current.clientHeight * 0.75 <=
+        0;
+      setIsShownButton(isShown);
+    };
+    _checkToShowButton();
+
+    window.addEventListener('scroll', _checkToShowButton);
+    return () => window.removeEventListener('scroll', _checkToShowButton);
+  }, []);
+
   return (
     <div
       className={`${styles['project-carousel']} ${
         isLgScreen ? '' : 'full-view'
       }`}
       data-is-md-screen={isMdScreen}
+      ref={carouselRef}
+      id='project-carousel-id'
     >
       <div className='swiper-wrapper'>
         <Swiper
           slidesPerView={'auto'}
           spaceBetween={0}
           centerInsufficientSlides={true}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
           touchRatio={1.5}
         >
           {projectList.map((project, projectIndex) => (
@@ -79,6 +104,13 @@ const ProjectCarousel = ({ projectList }: ProjectCarouselComponent) => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div
+        className='back-to-carousel'
+        data-is-visible={isShownButton}
+        onClick={scrollToCarousel}
+      >
+        <ExpandLessIcon />
       </div>
     </div>
   );
