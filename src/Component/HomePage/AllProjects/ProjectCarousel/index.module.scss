@@ -102,10 +102,5 @@
   &[data-is-md-screen='false'] {
     --_s: 120px;
     --_p: 16px;
-
-    [class~='back-to-carousel'] {
-      right: auto;
-      left: 24px;
-    }
   }
 }

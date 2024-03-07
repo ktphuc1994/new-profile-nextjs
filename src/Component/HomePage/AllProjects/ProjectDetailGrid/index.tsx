@@ -5,6 +5,7 @@ import { MyCustomCSS, ProjectItem } from '@/types';
 
 // import local constants
 import { projectColor } from './project.const';
+import { colorConst } from '@/constants';
 
 // import local library
 import dayjs from 'dayjs';
@@ -28,7 +29,7 @@ const ProjectDetailGrid = ({
 
   const isLeft = projectIndex % 2 === 0;
   const colorIndex = projectIndex % 5;
-  const itemColor = projectColor[colorIndex];
+  const itemColor = projectColor[colorIndex] ?? colorConst.primary;
 
   return (
     <div
