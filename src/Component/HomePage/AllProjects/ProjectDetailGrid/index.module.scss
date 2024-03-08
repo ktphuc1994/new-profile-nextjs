@@ -6,6 +6,7 @@
   [class~='project-detail__info'] {
     position: relative;
     width: 50%;
+    margin-bottom: 1.5em;
 
     &::after {
       content: '';
@@ -18,8 +19,8 @@
       background: repeating-linear-gradient(
         var(--_item-color),
         var(--_item-color) 15px,
-        #fff 15px,
-        #fff 20px
+        transparent 15px,
+        transparent 20px
       );
     }
 
@@ -56,7 +57,7 @@
         border-radius: 20px;
         font-weight: 600;
         font-size: 1.2rem;
-        color: #f2f2f2;
+        color: #fff;
         background-color: var(--_item-color);
         z-index: 1;
 
@@ -77,10 +78,33 @@
       }
     }
 
-    [class~='project-desc'] {
+    [class~='project-desc'],
+    [class~='project-link'] {
       padding-right: calc(var(--_date-circle-size) / 2);
       padding-left: 0.25em;
-      margin-bottom: 1.5em;
+
+      [class~='project-desc__item'] {
+        margin-bottom: 0.3em;
+      }
+    }
+
+    [class~='project-link'] {
+      margin-top: 1em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      [class~='project-link__wrapper'] {
+        align-self: flex-start;
+      }
+
+      [class~='project-link__youtube'] {
+        a {
+          display: block;
+          color: #000;
+          padding-top: 0.25rem;
+        }
+      }
     }
   }
 
@@ -109,9 +133,11 @@
         padding-left: calc(var(--_date-circle-size) / 2);
       }
 
-      [class~='project-desc'] {
+      [class~='project-desc'],
+      [class~='project-link'] {
         padding-right: 0.25em;
         padding-left: calc(var(--_date-circle-size) / 2);
+        justify-content: flex-end;
       }
     }
   }
@@ -155,9 +181,11 @@
         padding-left: calc(var(--_date-circle-size));
       }
 
-      [class~='project-desc'] {
+      [class~='project-desc'],
+      [class~='project-link'] {
         padding-right: 0.25em;
         padding-left: calc(var(--_date-circle-size));
+        justify-content: flex-end;
       }
     }
   }

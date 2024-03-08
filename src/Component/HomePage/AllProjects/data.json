@@ -2,31 +2,26 @@
     {
         "name": "Project 1 of Great",
         "key": "project-1",
-        "time": {
-            "start": "2023-01-30T00:00:00.000Z",
-            "end": "2023-02-10T00:00:00.000Z"
-        },
+        "time": "2023-01-30T00:00:00.000Z",
         "libraUsed": [
             "React",
             "NodeJS",
             "NextJS",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eum commodi.",
             "Accusantium ducimus aperiam, accusamus esse quas dolores inventore dicta.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, commodi.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "Lorem ipsum dolor sit amet."
-        ]
+        ],
+        "description": "project 1"
     },
     {
         "name": "Project 2 of Awesome",
         "key": "project-2",
-        "time": {
-            "start": "2023-02-20T00:00:00.000Z",
-            "end": "2023-03-30T00:00:00.000Z"
-        },
+        "time": "2023-02-20T00:00:00.000Z",
         "libraUsed": [
             "NodeJS",
             "ExpressJS",
@@ -34,36 +29,32 @@
             "Sequelize",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Lorem ipsum dolor sit amet.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        ]
+        ],
+        "description": "project 2"
     },
     {
         "name": "Infinite Project 3",
         "key": "project-3",
-        "time": {
-            "start": "2023-04-01T00:00:00.000Z",
-            "end": "2023-08-20T00:00:00.000Z"
-        },
+        "time": "2023-04-01T00:00:00.000Z",
         "libraUsed": [
             "NextJS",
             "MUI",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Voluptas, eum commodi.",
             "Lorem ipsum dolor sit amet.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        ]
+        ],
+        "description": "project 3"
     },
     {
         "name": "The Project 4",
         "key": "project-4",
-        "time": {
-            "start": "2023-09-01T00:00:00.000Z",
-            "end": "2023-10-20T00:00:00.000Z"
-        },
+        "time": "2023-09-01T00:00:00.000Z",
         "libraUsed": [
             "NextJS",
             "NestJS",
@@ -71,73 +62,68 @@
             "MUI",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eum commodi.",
             "Lorem ipsum dolor sit amet.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "Accusantium ducimus aperiam, accusamus esse quas dolores inventore dicta."
-        ]
+        ],
+        "description": "project 4"
     },
     {
         "name": "Let's get started Project 5",
         "key": "project-5",
-        "time": {
-            "start": "2023-10-21T00:00:00.000Z",
-            "end": "2023-12-10T00:00:00.000Z"
-        },
+        "time": "2023-10-21T00:00:00.000Z",
         "libraUsed": [
             "NestJS",
             "Primsa",
             "Jest",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eum commodi.",
             "Lorem ipsum dolor sit amet.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "Accusantium ducimus aperiam, accusamus esse quas dolores inventore dicta.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eum commodi."
-        ]
+        ],
+        "description": "project 5"
     },
     {
         "name": "Project 6 of the great",
         "key": "project-6",
-        "time": {
-            "start": "2023-12-11T00:00:00.000Z",
-            "end": "2024-01-31T00:00:00.000Z"
-        },
+        "time": "2023-12-11T00:00:00.000Z",
         "libraUsed": [
             "NestJS",
             "Sequelize",
             "Jest",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eum commodi.",
             "Lorem ipsum dolor sit amet.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "Accusantium ducimus aperiam, accusamus esse quas dolores inventore dicta."
-        ]
+        ],
+        "description": "project 6"
     },
     {
         "name": "Project 7",
         "key": "project-7",
-        "time": {
-            "start": "2024-02-01T00:00:00.000Z",
-            "end": "in-progress"
-        },
+        "time": "2024-02-01T00:00:00.000Z",
         "libraUsed": [
             "NestJS",
             "MUI",
             "Jest",
             "Git"
         ],
-        "description": [
+        "contribution": [
             "Lorem ipsum dolor sit amet.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "Accusantium ducimus aperiam, accusamus esse quas dolores.",
             "Lorem ipsum dolor amet consectetur adipisicing elit. Voluptas, eum commodi.",
             "Lorem ipsum dolor sit amet adipisicing."
-        ]
+        ],
+        "description": "project 7"
     }
 ]
